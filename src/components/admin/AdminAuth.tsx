@@ -14,7 +14,7 @@ export const AdminAuth: React.FC<AdminAuthProps> = ({ onAuthenticated }) => {
   const [loading, setLoading] = useState(false);
 
   // In production, this should come from environment variables
-  const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD || 'admin@123';
+  const ADMIN_PASSWORD = import.meta.env.VITE_ADMIN_PASSWORD;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

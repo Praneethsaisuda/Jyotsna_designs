@@ -38,10 +38,16 @@ export const CheckoutPage: React.FC = () => {
   const { state, getTotalPrice, dispatch } = useCart();
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
     setError('');
+
+    
 
     try {
       
@@ -67,9 +73,7 @@ export const CheckoutPage: React.FC = () => {
         cart_details: state.items,
         status: 'Order Placed'
       };
-      React.useEffect(() => {
-  window.scrollTo(0, 0);
-}, [orderId]);
+      
 
       // Send WhatsApp message (simulated)
       await sendWhatsAppMessage(orderData);
